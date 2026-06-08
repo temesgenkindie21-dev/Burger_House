@@ -1,0 +1,10 @@
+@import "@fontsource/oswald";
+@import "@fontsource/dm-sans";
+@import "@fontsource/nunito";
+@import "tailwindcss";
+
+@layer {
+  body {
+    @apply bg-[#010a5e] text-white font-[oswald];
+  }
+}
