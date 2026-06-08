@@ -17,7 +17,7 @@ import "./home.css";
 function Home() {
   return (
     <>
-      <div className={`flex flex-col md:flex-row md:justify-center gap-10 pt-16 pb-4 md:pt-20 dark:bg-zinc-900`} id="home">
+      <div className={`flex flex-col md:flex-row md:justify-center gap-10 pt-16 pb-4 md:pt-20 `} id="home">
         <div className="animate_moving">
           <img
             src={HomeImage}

@@ -1,0 +1,21 @@
+@keyframes moving {
+  50% {
+    transform: translateY(-1rem);
+  }
+}
+.animate_movingy {
+  animation-name: moving;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 0;
+}
+
+
+.animate_movingy:hover {
+  animation-name: moving;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
