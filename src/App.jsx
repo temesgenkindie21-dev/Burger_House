@@ -3,6 +3,7 @@ import Header from './Components/Header/Header'
 import Home from './Components/HomePage/Home'
 import CatagoriPromotion from './Components/HomePage/CatagoriPromotion'
 import AboutUs from './Components/HomePage/AboutUs'
+import Menu from './Components/HomePage/Menu'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Home />
       <CatagoriPromotion />
       <AboutUs />
+      <Menu />
     </>
   )
 }
