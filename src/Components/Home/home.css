@@ -1,0 +1,12 @@
+@keyframes moving {
+  50% {
+    transform: translateY(-1rem);
+  }
+}
+
+.animate_moving {
+  animation-name: moving;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
