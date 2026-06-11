@@ -16,7 +16,7 @@ import {
   RiQuoteText,
 } from "@remixicon/react";
 
-function Section5Page() {
+function Review() {
   const review = [
     {
       img: Review1,
@@ -111,4 +111,4 @@ function Section5Page() {
   );
 }
 
-export default Section5Page;
+export default Review;
