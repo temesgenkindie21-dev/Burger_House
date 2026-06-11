@@ -6,6 +6,7 @@ import AboutUs from './Components/HomePage/AboutUs'
 import Menu from './Components/HomePage/Menu'
 import Review from './Components/HomePage/Review'
 import Contact from './Components/HomePage/Contact'
+import Footer from './Components/Footer/Footer'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Menu />
       <Review />
       <Contact />
+      <Footer />
     </>
   )
 }
