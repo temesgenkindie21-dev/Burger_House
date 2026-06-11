@@ -12,16 +12,28 @@ import Link from "./Link";
 
 function Header() {
   const [open, setOpen] = useState(false);
+  const [isScrollDown, setIsScrollDown] = useState(false);
   const [active, setActive] = useState("home");
   const pages = ["Home", "About Us", "Menu", "Review", "Contact"];
- 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 50) {
+        setIsScrollDown(true);
+      } else {
+        setIsScrollDown(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <div
-      className={` bg-[#010a5e] fixed top-0 left-0 z-50 w-full  `}
-    >
+    <div className={` bg-[#010a5e] fixed top-0 left-0 z-50 w-full  `}>
       <div
-        className={`relative h-14 flex justify-between items-center mx-auto font-bold  mx-auto px-[12px]  ${open ? "border-none" : "border-yellow-500"}`}
+        className={`relative h-14 flex justify-between items-center mx-auto font-bold  mx-auto px-[12px] ${isScrollDown ? "border-b-2 border-yellow-500" : "border-none"} ${open ? "border-none" : "border-yellow-500"}`}
       >
         <div
           className={`text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-[Oswald] ${open ? "hidden" : "block"}`}
@@ -32,11 +44,11 @@ function Header() {
           className={`absolute top-0 left-0 py-14 w-full  ${open ? "block" : "hidden"} md:block  md:ml-auto md:w-auto  md:static `}
         >
           <ul
-            className={` flex flex-col md:flex-row text-center gap-5 font-[dmsans] bg-[#010a5e] pb-20 md:pb-0 border-b border-yellow-500 md:border-none `}
+            className={` flex flex-col md:flex-row text-center gap-5 font-[dmsans] bg-[#010a5e] pb-20 md:pb-0 border-b border-yellow-500 md:border-none  `}
           >
             {pages.map((value, index) => {
               return (
-                <div key={index} >
+                <div key={index}>
                   <Link
                     pages={value}
                     active={active}
@@ -70,9 +82,9 @@ function Header() {
             onClick={() => {
               setDark(false);
             }}
-            className={` cursor-pointer  ${open ? "hidden" : "block"} `}
+            className={` cursor-pointer  ${open ? "hidden" : "block"}`}
           >
-            <RiSunFill size={20} color="yellow" />
+            {/*  */}
           </div>
           <div
             id="menuT"
@@ -84,6 +96,13 @@ function Header() {
             <RiMenu2Line size={24} />
           </div>
         </div>
+      </div>
+      <div
+        className={`fixed right-4 ${isScrollDown ? "bottom-4" : "-bottom-1/2"}`}
+      >
+        <a href="#">
+          <RiArrowUpCircleFill size={28} color="#f0b100" />
+        </a>
       </div>
     </div>
   );
