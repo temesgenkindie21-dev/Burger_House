@@ -4,6 +4,7 @@ import Home from './Components/HomePage/Home'
 import CatagoriPromotion from './Components/HomePage/CatagoriPromotion'
 import AboutUs from './Components/HomePage/AboutUs'
 import Menu from './Components/HomePage/Menu'
+import Review from './Components/HomePage/Review'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <CatagoriPromotion />
       <AboutUs />
       <Menu />
+      <Review />
     </>
   )
 }
