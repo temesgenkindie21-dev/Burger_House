@@ -26,34 +26,34 @@ function Catagori() {
   ];
   return (
     <div
-      id="catagory"
-      className="max-w-screen-lg mx-auto px-[12px] grid grid-cols-1 md:grid-cols-3 gap-5 my-3 p-3"
-    >
-      {Data1.map((value) => {
-        return (
-          <div
-            className={` flex flex-row ${value.BG} rounded-lg overflow-hidden py-3 `}
-          >
-            <div className=" basis-1/3 relative ">
-              <img
-                src={value.img}
-                alt=""
-                className="absolute w-28 -bottom-4 -left-4"
-              />
+        id="catagory"
+        className="max-w-screen-lg mx-auto px-[12px] grid grid-cols-1 md:grid-cols-3 gap-5 my-3 dark:bg-zinc-700 dark:text-white p-3"
+      >
+        {Data1.map((value) => {
+          return (
+            <div
+              className={` flex flex-row ${value.BG} rounded-lg overflow-hidden py-3 `}
+            >
+              <div className=" basis-1/3 relative ">
+                <img
+                  src={value.img}
+                  alt=""
+                  className="absolute w-28 -bottom-4 -left-4"
+                />
+              </div>
+              <div className="">
+                <h1 className="text-xl font-bold uppercase">{value.title}</h1>
+                <p className="space-y-10 text-gray-300 text-sm">
+                  Lorem ipsum dolor sit.
+                </p>
+                <a href="" className={`${value.link} cursor-pointer`}>
+                  Buy online
+                </a>
+              </div>
             </div>
-            <div className="">
-              <h1 className="text-xl font-bold uppercase">{value.title}</h1>
-              <p className="space-y-10 text-gray-300 text-sm">
-                Lorem ipsum dolor sit.
-              </p>
-              <a href="" className={`${value.link} cursor-pointer`}>
-                Buy online
-              </a>
-            </div>
-          </div>
-        );
-      })}
-    </div>
+          );
+        })}
+      </div>
   );
 }
 

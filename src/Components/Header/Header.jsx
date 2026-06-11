@@ -13,6 +13,7 @@ import Link from "./Link";
 function Header() {
   const [open, setOpen] = useState(false);
   const [isScrollDown, setIsScrollDown] = useState(false);
+  const [dark, setDark] = useState(false);
   const [active, setActive] = useState("home");
   const pages = ["Home", "About Us", "Menu", "Review", "Contact"];
   useEffect(() => {
@@ -29,9 +30,20 @@ function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  useEffect(() => {
+    if (dark) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [dark]);
 
   return (
-    <div className={` bg-[#010a5e] fixed top-0 left-0 z-50 w-full  `}>
+    <div
+      className={` bg-[#010a5e] fixed top-0 left-0 z-50 w-full dark:bg-zinc-800 `}
+    >
       <div
         className={`relative h-14 flex justify-between items-center mx-auto font-bold  mx-auto px-[12px] ${isScrollDown ? "border-b-2 border-yellow-500" : "border-none"} ${open ? "border-none" : "border-yellow-500"}`}
       >
@@ -44,7 +56,7 @@ function Header() {
           className={`absolute top-0 left-0 py-14 w-full  ${open ? "block" : "hidden"} md:block  md:ml-auto md:w-auto  md:static `}
         >
           <ul
-            className={` flex flex-col md:flex-row text-center gap-5 font-[dmsans] bg-[#010a5e] pb-20 md:pb-0 border-b border-yellow-500 md:border-none  `}
+            className={` flex flex-col md:flex-row text-center gap-5 font-[dmsans] bg-[#010a5e] pb-20 md:pb-0 border-b border-yellow-500 md:border-none dark:bg-zinc-800 `}
           >
             {pages.map((value, index) => {
               return (
@@ -74,7 +86,7 @@ function Header() {
             onClick={() => {
               setDark(true);
             }}
-            className={` cursor-pointer  ${open ? "hidden" : "block"} `}
+            className={` cursor-pointer  ${open ? "hidden" : "block"} ${dark ? "hidden" : "block"} `}
           >
             <RiMoonLine size={20} />
           </div>
@@ -82,9 +94,9 @@ function Header() {
             onClick={() => {
               setDark(false);
             }}
-            className={` cursor-pointer  ${open ? "hidden" : "block"}`}
+            className={` cursor-pointer  ${open ? "hidden" : "block"} ${dark ? "block" : "hidden"}`}
           >
-            {/*  */}
+            <RiSunFill size={20} color="yellow" />
           </div>
           <div
             id="menuT"

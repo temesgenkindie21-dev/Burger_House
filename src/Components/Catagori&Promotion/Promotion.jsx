@@ -18,7 +18,7 @@ function Promotion() {
       >
         {Data2.map((item) => {
           return (
-            <div className="mx-auto px-[12px] bg-[#010d78] rounded-md flex flex-col md:flex-row lg:flex-row-reverse ">
+            <div className="mx-auto px-[12px] bg-[#010d78] rounded-md flex flex-col md:flex-row lg:flex-row-reverse dark:bg-zinc-700 dark:text-white">
               <div className="w-40 mx-auto animate_movingy">
                 <img src={item.img} alt="" className="basis-1/3 w-full py-5" />
               </div>

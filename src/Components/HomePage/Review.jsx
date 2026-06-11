@@ -35,10 +35,7 @@ function Review() {
     },
   ];
   return (
-    <div
-      className="bg-[#010d78] lg:h-screen pt-16 dark:bg-zinc-700 dark:text-white"
-      id="review"
-    >
+    <div className="bg-[#010d78] lg:h-screen pt-16 dark:bg-zinc-700 dark:text-white" id="review">
       <div className="max-w-screen-lg mx-auto px-[12px]  py-10 ">
         <div>
           <h2 className="uppercase font-bold text-3xl lg:text-6xl text-center">

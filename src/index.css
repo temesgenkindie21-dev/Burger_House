@@ -3,8 +3,10 @@
 @import "@fontsource/nunito";
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer {
   body {
-    @apply bg-[#010a5e] text-white font-[oswald];
+    @apply bg-[#010a5e] text-white font-[oswald] dark:bg-zinc-900;
   }
 }

@@ -17,7 +17,10 @@ import "./home.css";
 function Home() {
   return (
     <>
-      <div className={`flex flex-col md:flex-row md:justify-center gap-10 pt-16 pb-4 md:pt-20 `} id="home">
+      <div
+        className={`flex flex-col md:flex-row md:justify-center gap-10 pt-16 pb-4 md:pt-20 dark:bg-zinc-900`}
+        id="home"
+      >
         <div className="animate_moving">
           <img
             src={HomeImage}
@@ -41,7 +44,7 @@ function Home() {
 
           <div className="text-base flex gap-4 justify-center items-center md:gap-20 md:justify-start md:mb-8">
             <div className="cursor-pointer">
-              < RiRestaurantFill color="#f0b100" size={36} />
+              <RiRestaurantFill color="#f0b100" size={36} />
               <br />
               <h1>Delicious</h1>
             </div>
@@ -66,7 +69,7 @@ function Home() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;
